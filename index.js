@@ -28,7 +28,7 @@ app.get('/graphCallback', function(request, response) {
 	getToken(request.query.code, function(err, data) {
 
 		body_response = data;
-		response.send(JSON.parse(data));
+		response.send(data);
 		//console.log(data);
 	});
 });
