@@ -71,16 +71,24 @@ function getToken(code, callback) {
 			'Content-Length': Buffer.byteLength(data)
 		}
 	};
+	
+	var full;
 
 	var req = https.request(options, function(res) {
 		res.setEncoding('utf8');
 		res.on('data', function(chunk) {
-			callback(null, chunk);
+			//callback(null, "body: " + chunk);
+			full += chunk;
+			
 		});
+		
+		res.on('end', function() {
+			callback(null, full);
+		})
 
 	});
 
-	req.write(data);
-	req.end();
+	//req.write(data);
+	req.end(data);
 
 }
