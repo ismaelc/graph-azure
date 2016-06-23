@@ -28,8 +28,9 @@ app.get('/graphCallback', function(request, response) {
 	getToken(request.query.code, function(err, data) {
 
 		body_response = data;
-		response.send(data.access_token);
-		//console.log(data);
+		console.log(data);
+		response.send('Yo');
+		
 	});
 });
 
