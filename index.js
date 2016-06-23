@@ -28,6 +28,7 @@ app.get('/graphCallback', function(request, response) {
 
 		body_response = data;
 		//response.send(data);
+		console.log(data);
 		response.send(JSON.stringify(data));
 	});
 });
