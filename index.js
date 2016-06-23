@@ -29,7 +29,7 @@ app.get('/graphCallback', function(request, response) {
 
 		body_response = data;
 		console.log(data);
-		response.send('Yo');
+		response.send(data);
 		
 	});
 });
