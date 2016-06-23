@@ -9,10 +9,13 @@
 <body>
   <script>
     if (!opener) {
+      document.querySelector("#hello").value = "Error";
       console.log("Not opened as a popup");
       alert('See console message');
     } else {
+      document.querySelector("#hello").value = "Whew";
       opener.document.querySelector('#popupDataCatch').value = "Panget";
+      document.querySelector("#hello").value = "Hmm";
     }
   </script>
   <div style="margin:100px;">
@@ -33,7 +36,7 @@
   </div>
 </nav>
     <div class="jumbotron"  style="padding:40px;">
-      <h1>Hello, world!</h1>
+      <h1 id="hello">Hello, world!</h1>
       <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div>
