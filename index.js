@@ -28,7 +28,7 @@ app.get('/graphCallback', function(request, response) {
 	getToken(request.query.code, function(err, data) {
 
 		body_response = data;
-		response.send(data);
+		response.send(JSON.parse(data));
 		//console.log(data);
 	});
 });
@@ -74,7 +74,7 @@ function getToken(code, callback) {
 	var req = https.request(options, function(res) {
 		res.setEncoding('utf8');
 		res.on('data', function(chunk) {
-			callback(null, "body: " + chunk);
+			callback(null, chunk);
 		});
 
 	});
