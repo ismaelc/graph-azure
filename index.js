@@ -31,7 +31,7 @@ app.get('/graphCallback', function(request, response) {
 		body_response = data;
 		console.log(data);
 		//response.send(data);
-		response.sendFile(path.join(__dirname+'/third.html'));
+		response.sendFile(path.join('public/third.html'));
 		
 	});
 });
