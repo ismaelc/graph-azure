@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json({
@@ -29,7 +30,8 @@ app.get('/graphCallback', function(request, response) {
 
 		body_response = data;
 		console.log(data);
-		response.send(data);
+		//response.send(data);
+		response.sendFile(path.join(__dirname+'/third.html'));
 		
 	});
 });
