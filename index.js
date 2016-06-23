@@ -24,12 +24,13 @@ app.get('/', function(request, response) {
 
 app.get('/graphCallback', function(request, response) {
 
+	console.log("Code: " + request.query.code);
 	getToken(request.query.code, function(err, data) {
 
 		body_response = data;
 		//response.send(data);
 		console.log(data);
-		response.send(JSON.stringify(data));
+		response.send('Yo');
 	});
 });
 
