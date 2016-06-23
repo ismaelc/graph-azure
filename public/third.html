@@ -7,6 +7,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <script>
+    if (!opener) {
+      console.log("Not opened as a popup");
+      alert('See console message');
+    } else {
+      opener.document.querySelector('#popupDataCatch').value = "Panget";
+    }
+  </script>
   <div style="margin:100px;">
     <nav class="navbar navbar-inverse navbar-static-top">
   <div class="container">
