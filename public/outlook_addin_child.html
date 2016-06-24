@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<body>
+<script>
+var field;
+if (!opener) {
+    display("Not opened as a popup");
+} else {
+    //field = opener.document.querySelector("input[type=text]");
+    //display("Value is " + field.value);
+    window.location.href = 'https://login.microsoftonline.com/common/oauth2/authorize?client_id=5b131605-fd90-46ca-ba65-251c6bed66a5&response_type=code'
+    + '&redirect_uri=http://graph-azure.azurewebsites.net/graphCallback'
+    // '&redirect_uri=https://limitless-inlet-39812.herokuapp.com/popup.html'
+    //+ '&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=dev';
+    + '&scope=https://graph.microsoft.com/mail.read';
+    opener.document.querySelector('#popupDataCatch').value = "Pogi";
+}
+
+function display(msg) {
+    var p = document.createElement('p');
+    p.innerHTML = msg;
+    document.body.appendChild(p);
+}
+</script>
+</body>
+</html>
