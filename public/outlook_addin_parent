@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<body>
+<input type="text"><input type="button" value="Click me">
+<script>
+document.querySelector("input[type=text]").value = Math.floor(Math.random() * 10000);
+document.querySelector("input[type=button]").addEventListener(
+  "click",
+  function() {
+    var wnd = window.open("popup.html");
+  },
+  false
+);
+</script>
+<input type="text" id="popupDataCatch">
+</body>
+</html>
